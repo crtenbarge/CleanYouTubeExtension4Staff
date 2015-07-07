@@ -1,0 +1,43 @@
+{
+  "manifest_version": 2,
+
+  "name": "Cleaner Chrome for Staff",
+  "description": "This extension strips away the suggested video sidebar and a few advertisements.",
+  "version": "3.0",
+	"content_scripts": [
+		{
+		  "matches": ["https://www.youtube.com/"], 
+		  "js" : ["style2.js"]
+		},
+		{
+		  "matches": ["https://www.youtube.com/user/v*"], 
+		  "js" : ["style2.js"]
+		},
+		{
+		  "matches": ["https://www.youtube.com/user/V*"], 
+		  "js" : ["style2.js"]
+		},
+		{
+		  "matches": ["https://www.youtube.com/watch*"], 
+		  "js" : ["style2.js"]
+		},
+		{
+		  "matches": ["http://www.youtube.com/*"], 
+		  "js" : ["style2.js"]
+		},
+		{
+		  "matches": ["http://www.youtube.com/channel/*"], 
+		  "js" : ["style2.js"]
+		}
+	],
+   "permissions": [
+    "tabs", 
+    "<all_urls>"
+  ],
+   "browser_action": {
+    "default_icon": "active.png"
+  },
+  "background": {
+    "scripts": ["background.js"]
+  }     
+}
